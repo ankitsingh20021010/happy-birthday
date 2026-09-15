@@ -1,129 +1,1038 @@
-/* customizable snowflake styling */
-.loader button {
-    width: 50%;
-    height: 100px;
-    position: fixed;
-    left: 50%;
-    top: 45%;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    background: center no-repeat #fff;
-    z-index: 9999999999999999999999;
-    font-size: 50px;
-    outline: none;
-    box-sizing: border-box;
-    border: none;
-    border-radius: .3em;
-    text-transform: uppercase;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(110, 80, 20, .4),
-        inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-    background-image: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
-    border: 1px solid #a55d07;
-    color: rgb(120, 50, 5);
-    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    background-size: 100% 100%;
-    background-position: center;
-}
+/* =========================================
+   BIRTHDAY PAGE - MAIN STYLING
+   ========================================= */
 
-.golden-btn:focus,
-.golden-btn:hover {
-    background-size: 150% 150%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
-        inset 0 -2px 5px 1px #b17d10,
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-    border: 1px solid rgba(165, 93, 7, .6);
-    color: rgba(120, 50, 5, .8);
-}
 
-.golden-btn:active {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(110, 80, 20, .4),
-        inset 0 -2px 5px 1px #b17d10,
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-}
+/* =========================================
+   START SCREEN
+   ========================================= */
 
 .loader {
     position: fixed;
-    left: 0px;
-    top: 0px;
+    inset: 0;
+
     width: 100%;
     height: 100%;
-    z-index: 999;
-    background: url(img/back.png) center no-repeat #000;
+
+    z-index: 999999;
+
+    background:
+        url(img/back.png)
+        center center /
+        cover
+        no-repeat #000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+/* =========================================
+   START BUTTON
+   ========================================= */
+
+.loader button {
+    width: min(50%, 500px);
+    height: 100px;
+
+    background: center no-repeat #fff;
+
+    font-size: 50px;
+    font-weight: 700;
+
+    outline: none;
+    box-sizing: border-box;
+
+    border: 1px solid #a55d07;
+    border-radius: .3em;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, .16),
+        0 3px 6px rgba(110, 80, 20, .4),
+        inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+
+    background-image:
+        linear-gradient(
+            160deg,
+            #a54e07,
+            #b47e11,
+            #fef1a2,
+            #bc881b,
+            #a54e07
+        );
+
+    background-size: 100% 100%;
+    background-position: center;
+
+    color: rgb(120, 50, 5);
+
+    text-shadow:
+        0 2px 2px rgba(250, 227, 133, 1);
+
+    cursor: pointer;
+
+    transition: all .25s ease-in-out;
+}
+
+
+.loader button:hover {
+    transform: scale(1.05);
+
+    background-size: 150% 150%;
+
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.19),
+        0 6px 6px rgba(0, 0, 0, 0.23),
+        inset 0 -2px 5px 1px #b17d10,
+        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
+
+.loader button:active {
+    transform: scale(.98);
+}
+
+
+/* =========================================
+   MUSIC
+   ========================================= */
 
 .song {
     display: none;
 }
 
+
+/* =========================================
+   BODY
+   ========================================= */
+
 body {
-    background-color: #FFDAB9;
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff5f7 0%,
+            #FFDAB9 45%,
+            #ffc1cc 100%
+        );
 }
+
+
+/* =========================================
+   IMAGES
+   ========================================= */
 
 img {
     width: 100%;
 }
 
-.balloon-border {
-    position: fixed;
-    top: 100%;
-    opacity: 0.5;
-    z-index: 99999999;
+
+/* =========================================
+   MAIN BIRTHDAY SECTION
+   ========================================= */
+
+.main {
+    position: relative;
+
+    min-height: auto;
+
+    overflow: hidden;
+
+    padding-bottom: 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(255, 255, 255, .8),
+            transparent 45%
+        );
 }
+
+
+/* =========================================
+   NAME
+   ========================================= */
 
 .area {
     text-align: center;
-    font-size: 70px;
+
+    font-size: clamp(45px, 8vw, 90px);
+
     color: #C4515C;
-    letter-spacing: -7px;
+
+    letter-spacing: -5px;
+
     font-weight: 700;
+
     text-transform: uppercase;
-    animation: spin 2s ease-out infinite;
-    text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+
+    animation:
+        birthdayName 2s ease-in-out infinite;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px rgba(255, 255, 255, .8);
+
+    position: relative;
+
+    z-index: 10;
 }
+
 
 #nae {
     text-transform: capitalize;
 }
 
-#confetti {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-}
 
-@keyframes spin {
+/* =========================================
+   NAME ANIMATION
+   ========================================= */
+
+@keyframes birthdayName {
+
     0% {
-        transform: rotateZ(0);
+        transform:
+            rotateZ(0deg)
+            scale(1);
     }
 
     25% {
-        transform: rotateZ(10deg);
+        transform:
+            rotateZ(4deg)
+            scale(1.02);
     }
 
     50% {
-        transform: rotateZ(0deg);
+        transform:
+            rotateZ(0deg)
+            scale(1);
     }
 
     75% {
-        transform: rotateZ(-10deg);
+        transform:
+            rotateZ(-4deg)
+            scale(1.02);
+    }
+
+    100% {
+        transform:
+            rotateZ(0deg)
+            scale(1);
     }
 }
 
+
+/* =========================================
+   TYPING TEXT
+   ========================================= */
+
 .type-wrap {
+    position: relative;
+
+    z-index: 20;
+
     font-size: 25px;
+
     color: #C4515C;
+
+    min-height: 65px;
+
+    margin-top: 10px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 1px 2px rgba(255, 255, 255, .8);
+}
+
+
+/* Make typing headings behave properly */
+
+.type-wrap h2 {
+    margin-bottom: 10px;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+/* =========================================
+   CONFETTI
+   ========================================= */
+
+#confetti {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 999999;
+}
+
+
+/* =========================================
+   BALLOON BORDER
+   ========================================= */
+
+.balloon-border {
+    position: fixed;
+
+    top: 100%;
+
+    width: 100%;
+
+    opacity: .5;
+
+    z-index: 99999999;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CAKE
+   ========================================= */
+
+/*
+   IMPORTANT:
+   Cake is now in normal document flow.
+   No absolute positioning.
+   This prevents overlap with typing text.
+*/
+
+.cake {
+    position: relative;
+
+    left: auto;
+
+    width: 280px;
+    max-width: 80%;
+
+    margin: 5px auto 0;
+
+    padding: 0;
+
+    z-index: 5;
+
+    display: block;
+
+    animation:
+        cakeFloat 3s ease-in-out infinite;
+}
+
+
+/* Cake image */
+
+.cake img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+}
+
+
+/* Cake floating animation */
+
+@keyframes cakeFloat {
+
+    0% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
+    100% {
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   PERSONAL BIRTHDAY LETTER SECTION
+   ========================================= */
+
+.birthday-letter-section {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        25px
+        20px
+        80px;
+
+    margin: 0;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0),
+            rgba(255, 240, 245, .8)
+        );
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   LETTER BUTTON
+   ========================================= */
+
+.letter-btn {
+    position: relative;
+
+    z-index: 10;
+
+    border: none;
+
+    padding:
+        16px
+        35px;
+
+    border-radius: 50px;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f81,
+            #e83e70
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(232, 62, 112, .3);
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.letter-btn:hover {
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 35px
+        rgba(232, 62, 112, .4);
+}
+
+
+.letter-btn:active {
+    transform:
+        scale(.96);
+}
+
+
+/* =========================================
+   LETTER
+   ========================================= */
+
+.birthday-letter {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin:
+        40px
+        auto
+        0;
+
+    opacity: 0;
+
+    transform:
+        translateY(60px)
+        scale(.92);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        max-height 1s ease;
+}
+
+
+/* =========================================
+   OPEN LETTER
+   ========================================= */
+
+.birthday-letter.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    max-height: 900px;
+}
+
+
+/* =========================================
+   LETTER PAPER
+   ========================================= */
+
+.letter-content {
+
+    position: relative;
+
+    padding:
+        50px
+        45px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff8fa
+        );
+
+    border:
+        1px solid
+        rgba(255, 105, 140, .2);
+
+    box-shadow:
+        0 20px 60px
+        rgba(190, 60, 100, .18);
+
+    text-align: center;
+}
+
+
+/* =========================================
+   LETTER TOP HEART
+   ========================================= */
+
+.letter-content::before {
+
+    content: "♥";
+
+    position: absolute;
+
+    top: -20px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ff4f81;
+
+    color: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(255, 79, 129, .35);
+}
+
+
+/* =========================================
+   LETTER ICON
+   ========================================= */
+
+.letter-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 15px;
+
+    animation:
+        heartBeat 1.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================
+   HEART BEAT
+   ========================================= */
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+}
+
+
+/* =========================================
+   LETTER HEADING
+   ========================================= */
+
+.letter-content h2 {
+
+    margin:
+        0
+        0
+        25px;
+
+    color: #d94368;
+
+    font-size:
+        clamp(
+            28px,
+            5vw,
+            40px
+        );
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   LETTER PARAGRAPH
+   ========================================= */
+
+.letter-content p {
+
+    color: #555;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin:
+        15px
+        auto;
+
+    max-width: 580px;
+}
+
+
+/* =========================================
+   LAST LINE
+   ========================================= */
+
+.letter-content .last-line {
+
+    color: #d94368;
+
+    font-weight: 700;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   SIGNATURE
+   ========================================= */
+
+.signature {
+
+    margin-top: 30px;
+
+    color: #888;
+
+    font-style: italic;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+   ========================================= */
+
+.birthday-letter-section::before,
+.birthday-letter-section::after {
+
+    position: absolute;
+
+    content: "❤";
+
+    color:
+        rgba(
+            255,
+            79,
+            129,
+            .18
+        );
+
+    font-size: 80px;
+
+    animation:
+        floatingHeart
+        5s
+        ease-in-out
+        infinite;
+
+    pointer-events: none;
+}
+
+
+.birthday-letter-section::before {
+
+    left: 8%;
+
+    top: 25%;
+}
+
+
+.birthday-letter-section::after {
+
+    right: 8%;
+
+    bottom: 20%;
+
+    font-size: 60px;
+
+    animation-delay:
+        1.5s;
+}
+
+
+/* =========================================
+   FLOATING HEART ANIMATION
+   ========================================= */
+
+@keyframes floatingHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(-10deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-30px)
+            rotate(10deg);
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-10deg);
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Start button */
+
+    .loader button {
+
+        width: 75%;
+
+        height: 80px;
+
+        font-size: 32px;
+    }
+
+
+    /* Name */
+
+    .area {
+
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+
+    /* Typing */
+
+    .type-wrap {
+
+        font-size: 19px;
+
+        min-height: 60px;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* Cake */
+
+    .cake {
+
+        width: 240px;
+
+        max-width: 75%;
+
+        margin-top: 5px;
+
+        padding: 0;
+    }
+
+
+    /* Letter section */
+
+    .birthday-letter-section {
+
+        padding:
+            20px
+            15px
+            70px;
+    }
+
+
+    /* Letter button */
+
+    .letter-btn {
+
+        font-size: 17px;
+
+        padding:
+            14px
+            28px;
+    }
+
+
+    /* Letter */
+
+    .birthday-letter {
+
+        margin-top: 35px;
+    }
+
+
+    /* Letter content */
+
+    .letter-content {
+
+        padding:
+            40px
+            22px;
+    }
+
+
+    /* Paragraph */
+
+    .letter-content p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Icon */
+
+    .letter-icon {
+
+        font-size: 42px;
+    }
+
+
+    /* Floating hearts */
+
+    .birthday-letter-section::before {
+
+        left: -15px;
+
+        font-size: 55px;
+    }
+
+
+    .birthday-letter-section::after {
+
+        right: -10px;
+
+        font-size: 45px;
+    }
 
 }
 
-.cake {
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    padding-top: 250px;
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    /* Start button */
+
+    .loader button {
+
+        width: 80%;
+
+        height: 70px;
+
+        font-size: 26px;
+    }
+
+
+    /* Name */
+
+    .area {
+
+        font-size: 40px;
+
+        letter-spacing: -2px;
+    }
+
+
+    /* Typing */
+
+    .type-wrap {
+
+        font-size: 17px;
+
+        min-height: 55px;
+
+        margin-top: 5px;
+
+        margin-bottom: 5px;
+    }
+
+
+    /* Cake */
+
+    .cake {
+
+        width: 210px;
+
+        max-width: 70%;
+
+        margin-top: 0;
+
+        padding: 0;
+    }
+
+
+    /* Message section */
+
+    .birthday-letter-section {
+
+        padding:
+            15px
+            15px
+            60px;
+    }
+
+
+    /* Button */
+
+    .letter-btn {
+
+        font-size: 16px;
+
+        padding:
+            13px
+            24px;
+    }
+
+
+    /* Letter */
+
+    .birthday-letter {
+
+        margin-top: 30px;
+    }
+
+
+    /* Letter content */
+
+    .letter-content {
+
+        padding:
+            38px
+            18px;
+    }
+
+
+    /* Heading */
+
+    .letter-content h2 {
+
+        font-size: 28px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* Paragraph */
+
+    .letter-content p {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Signature */
+
+    .signature {
+
+        font-size: 15px;
+
+        margin-top: 25px;
+    }
+
 }
